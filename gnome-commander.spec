@@ -96,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/pixmaps/*
 %_datadir/applications/gnome-commander.desktop
 %{_datadir}/gnome/help/gnome-commander/C/
-%{_datadir}/man/man1/*
+%{_mandir}/man1/*
 %{_datadir}/omf/gnome-commander/gnome-commander-C.omf
 %{_menudir}/%{name}
 %{_miconsdir}/%{name}.png
