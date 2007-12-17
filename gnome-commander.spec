@@ -9,7 +9,6 @@ Source2: %{name}-32.png
 Source3: %{name}-16.png
 License: GPL
 Group: File tools
-BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: libgnomeui2-devel 
 BuildRequires: gnome-vfs2-devel
 BuildRequires: libxml2-devel
