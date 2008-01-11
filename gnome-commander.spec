@@ -51,16 +51,6 @@ rm -rf $RPM_BUILD_ROOT%{_localstatedir}/scrollkeeper
 
 rm -f %buildroot%_libdir/gnome-commander/*.a
 rm -f %buildroot%_libdir/gnome-commander/plugins/*.a
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): \
-command="%{_bindir}/gnome-commander" \
-icon="%{name}.png" \
-needs="X11" \
-section="Applications/File tools" \
-title="Gnome Commander" \
-longtitle="Filemanager similar to the Norton Commander(TM)" xdg="true"
-EOF
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-System-FileTools" \
@@ -98,7 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome/help/gnome-commander/C/
 %{_mandir}/man1/*
 %{_datadir}/omf/gnome-commander/gnome-commander-C.omf
-%{_menudir}/%{name}
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
