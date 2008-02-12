@@ -28,7 +28,6 @@ BuildRequires: desktop-file-utils
 BuildRequires: flex intltool gnome-common
 
 %description
-
 Gnome Commander is a filemanager that just like the classical Norton
 commander (TM) lets you do everything with the keyboard. It can
 perform all standard file operations and some extra features like ftp
