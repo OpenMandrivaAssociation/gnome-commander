@@ -1,6 +1,6 @@
 Summary: A Gnome filemanager similar to the Norton Commander(TM) 
 Name: gnome-commander
-Version: 1.2.4
+Version: 1.2.5
 Release: %mkrel 1
 URL: http://www.freesoftware.fsf.org/gcmd/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
@@ -14,13 +14,12 @@ BuildRequires: libgnomeui2-devel
 BuildRequires: gnome-vfs2-devel
 BuildRequires: libxml2-devel
 BuildRequires: libGConf2-devel
-BuildRequires: libexif-devel
+BuildRequires: libexiv-devel
 BuildRequires: python-devel
 BuildRequires: libgsf-devel
 BuildRequires: liblcms-devel
 BuildRequires: libchm-devel
-BuildRequires: libiptcdata-devel
-BuildRequires: id3lib-devel
+BuildRequires: taglib-devel
 BuildRequires: perl-XML-Parser
 BuildRequires: gnome-doc-utils libxslt-proc
 BuildRequires: desktop-file-utils
