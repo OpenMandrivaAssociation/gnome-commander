@@ -17,7 +17,7 @@ BuildRequires: libGConf2-devel
 BuildRequires: libexiv-devel
 BuildRequires: python-devel
 BuildRequires: libgsf-devel
-BuildRequires: liblcms-devel
+BuildRequires: lcms-devel
 BuildRequires: libchm-devel
 BuildRequires: taglib-devel
 BuildRequires: perl-XML-Parser
