@@ -1,6 +1,6 @@
 Summary: A Gnome filemanager similar to the Norton Commander(TM) 
 Name: gnome-commander
-Version: 1.2.5
+Version: 1.2.6
 Release: %mkrel 1
 URL: http://www.freesoftware.fsf.org/gcmd/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
@@ -36,6 +36,8 @@ support.
 %setup -q
 
 %build
+%define _disable_ld_as_needed 1
+%define _disable_ld_no_undefined 1
 %configure2_5x --disable-scrollkeeper
 %make
 
