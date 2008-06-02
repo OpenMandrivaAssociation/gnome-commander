@@ -43,7 +43,7 @@ support.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-rm -rf $RPM_BUILD_ROOT%{_localstatedir}/scrollkeeper
+rm -rf $RPM_BUILD_ROOT%{_localstatedir}/lib/scrollkeeper
 
 %makeinstall_std
 
