@@ -69,13 +69,17 @@ chmod 644 %buildroot%_libdir/%name/plugins/*.la
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %mdkversion < 200900
 %post
 %update_scrollkeeper
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_scrollkeeper
 %{clean_menus}
+%endif
 
 %files -f %name.lang
 %defattr(-,root,root)
