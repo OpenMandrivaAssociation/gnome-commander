@@ -1,7 +1,7 @@
 Summary: A Gnome filemanager similar to the Norton Commander(TM) 
 Name: gnome-commander
 Version: 1.2.7
-Release: %mkrel 1
+Release: %mkrel 2
 URL: http://www.freesoftware.fsf.org/gcmd/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: %{name}-48.png
