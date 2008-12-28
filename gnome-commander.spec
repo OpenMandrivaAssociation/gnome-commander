@@ -4,9 +4,7 @@ Version: 1.2.7
 Release: %mkrel 2
 URL: http://www.freesoftware.fsf.org/gcmd/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-Source1: %{name}-48.png
-Source2: %{name}-32.png
-Source3: %{name}-16.png
+Patch0: gnome-commander-1.2.7-fix-str-fmt.patch
 License: GPL
 Group: File tools
 BuildRoot: %{_tmppath}/%{name}-root
@@ -34,6 +32,7 @@ support.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %define _disable_ld_as_needed 1
@@ -43,7 +42,6 @@ support.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-rm -rf $RPM_BUILD_ROOT%{_localstatedir}/lib/scrollkeeper
 
 %makeinstall_std
 
@@ -56,13 +54,6 @@ desktop-file-install --vendor="" \
   --add-category="X-MandrivaLinux-System-FileTools" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
-
-install -d $RPM_BUILD_ROOT/%{_miconsdir}
-install -d $RPM_BUILD_ROOT/%{_liconsdir}
-install -d $RPM_BUILD_ROOT/%{_iconsdir}
-cp %{SOURCE1} $RPM_BUILD_ROOT/%{_liconsdir}/%{name}.png
-cp %{SOURCE2} $RPM_BUILD_ROOT/%{_iconsdir}/%{name}.png
-cp %{SOURCE3} $RPM_BUILD_ROOT/%{_miconsdir}/%{name}.png
 
 chmod 644 %buildroot%_libdir/%name/plugins/*.la
 
@@ -92,8 +83,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome/help/gnome-commander/C/
 %{_mandir}/man1/*
 %{_datadir}/omf/gnome-commander/gnome-commander-C.omf
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_liconsdir}/%{name}.png
-
-
