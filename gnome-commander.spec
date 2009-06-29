@@ -17,7 +17,7 @@ BuildRequires: python-devel
 BuildRequires: libgsf-devel
 BuildRequires: lcms-devel
 BuildRequires: libchm-devel
-BuildRequires: poppler-devel
+BuildRequires: libpoppler-devel
 BuildRequires: taglib-devel
 BuildRequires: intltool
 BuildRequires: gnome-doc-utils libxslt-proc
