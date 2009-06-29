@@ -1,11 +1,11 @@
 Summary: A Gnome filemanager similar to the Norton Commander(TM) 
 Name: gnome-commander
-Version: 1.2.7
-Release: %mkrel 3
+Version: 1.2.8
+Release: %mkrel 1
 URL: http://www.freesoftware.fsf.org/gcmd/
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-Patch0: gnome-commander-1.2.7-fix-str-fmt.patch
-License: GPL
+Patch0: gnome-commander-1.2.8-fix-str-fmt.patch
+License: GPLv2+
 Group: File tools
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: libgnomeui2-devel 
@@ -17,12 +17,13 @@ BuildRequires: python-devel
 BuildRequires: libgsf-devel
 BuildRequires: lcms-devel
 BuildRequires: libchm-devel
+BuildRequires: poppler-devel
 BuildRequires: taglib-devel
-BuildRequires: perl-XML-Parser
+BuildRequires: intltool
 BuildRequires: gnome-doc-utils libxslt-proc
 BuildRequires: desktop-file-utils
 #gw patched
-BuildRequires: flex intltool gnome-common
+BuildRequires: flex gnome-common
 
 %description
 Gnome Commander is a filemanager that just like the classical Norton
@@ -46,6 +47,10 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 %find_lang %name --with-gnome
+for omf in %buildroot%_datadir/omf/*/*[_-]??.omf;do 
+echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name.lang
+done
+
 
 rm -f %buildroot%_libdir/gnome-commander/*.a
 rm -f %buildroot%_libdir/gnome-commander/plugins/*.a
@@ -80,6 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/gnome-commander/
 %_datadir/pixmaps/*
 %_datadir/applications/gnome-commander.desktop
-%{_datadir}/gnome/help/gnome-commander/C/
 %{_mandir}/man1/*
 %{_datadir}/omf/gnome-commander/gnome-commander-C.omf
