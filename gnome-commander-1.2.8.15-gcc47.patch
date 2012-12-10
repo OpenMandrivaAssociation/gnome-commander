@@ -1,0 +1,13 @@
+--- gnome-commander-1.2.8.15/src/dict.h.gcc47	2011-11-08 08:26:25.000000000 +0900
++++ gnome-commander-1.2.8.15/src/dict.h	2012-01-05 11:26:39.649243923 +0900
+@@ -55,8 +55,8 @@
+ template <typename KEY, typename VAL>
+ inline void DICT<KEY,VAL>::add(const KEY k, const VAL &v)
+ {
+-    std::pair<typename KEY_COLL::iterator,bool> k_pos = k_coll.insert(make_pair(k,(const VAL *) NULL));
+-    std::pair<typename VAL_COLL::iterator,bool> v_pos = v_coll.insert(make_pair(v,(const KEY *) NULL));
++    std::pair<typename KEY_COLL::iterator,bool> k_pos = k_coll.insert(std::make_pair(k,(const VAL *) NULL));
++    std::pair<typename VAL_COLL::iterator,bool> v_pos = v_coll.insert(std::make_pair(v,(const KEY *) NULL));
+ 
+     if (k_pos.second)
+         k_pos.first->second = &v_pos.first->first;
