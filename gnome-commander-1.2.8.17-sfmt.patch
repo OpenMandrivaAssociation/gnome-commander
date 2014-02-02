@@ -1,0 +1,21 @@
+diff -urN gnome-commander-1.2.8.17/src/gnome-cmd-xml-config.cc gnome-commander-1.2.8.17-patched/src/gnome-cmd-xml-config.cc
+--- gnome-commander-1.2.8.17/src/gnome-cmd-xml-config.cc	2014-01-13 04:05:33.000000000 +1100
++++ gnome-commander-1.2.8.17-patched/src/gnome-cmd-xml-config.cc	2014-02-02 22:06:10.000000000 +1100
+@@ -547,7 +547,7 @@
+     if (!g_markup_parse_context_parse (context, xml, xml_len, &error) ||
+         !g_markup_parse_context_end_parse (context, &error))
+     {
+-        g_warning (error->message);
++        g_warning ("%s", error->message);
+         g_error_free (error);
+     }
+ 
+@@ -568,7 +568,7 @@
+ 
+     if (!g_file_get_contents (path, &xml, &xml_len, &error))
+     {
+-        g_warning (error->message);
++        g_warning ("%s", error->message);
+         g_error_free (error);
+ 
+         return FALSE;
