@@ -3,7 +3,7 @@
 Summary:	A Gnome filemanager similar to the Norton Commander(TM) 
 Name:		gnome-commander
 Version:	1.2.8.17
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		File tools
 Url:		http://www.freesoftware.fsf.org/gcmd/
@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(poppler)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(taglib)
+Requires:	gnome-vfs2
 
 %description
 Gnome Commander is a filemanager that just like the classical Norton
