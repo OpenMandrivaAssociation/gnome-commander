@@ -14,7 +14,7 @@ BuildRequires:	flex
 BuildRequires:	gnome-common
 BuildRequires:	intltool
 BuildRequires:	libxslt-proc
-#BuildRequires:	libchm-devel
+BuildRequires:	itstool
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
