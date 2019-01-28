@@ -2,8 +2,8 @@
 
 Summary:	A Gnome filemanager similar to the Norton Commander(TM) 
 Name:		gnome-commander
-Version:	1.2.8.17
-Release:	3
+Version:	1.8.1
+Release:	1
 License:	GPLv2+
 Group:		File tools
 Url:		http://www.freesoftware.fsf.org/gcmd/
@@ -14,7 +14,7 @@ BuildRequires:	flex
 BuildRequires:	gnome-common
 BuildRequires:	intltool
 BuildRequires:	libxslt-proc
-BuildRequires:	libchm-devel
+BuildRequires:	itstool
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(poppler)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(taglib)
+BuildRequires:	chmlib-devel
 Requires:	gnome-vfs2
 
 %description
@@ -42,22 +43,25 @@ support.
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/gnome-commander.desktop
 %{_mandir}/man1/*
+%{_datadir}/appdata/gnome-commander.appdata.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
+%{_datadir}/gnome-commander/mime/*
 
 #----------------------------------------------------------------------------
 
 %prep
 %setup -q
-%patch0 -p1
+#patch0 -p1
 
 %build
 autoreconf
 %configure2_5x \
 	--disable-scrollkeeper \
 	--disable-shared
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} --with-gnome
 
