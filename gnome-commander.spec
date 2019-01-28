@@ -43,6 +43,9 @@ support.
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/gnome-commander.desktop
 %{_mandir}/man1/*
+%{_datadir}/appdata/gnome-commander.appdata.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
+%{_datadir}/gnome-commander/mime/*
 
 #----------------------------------------------------------------------------
 
@@ -55,10 +58,10 @@ autoreconf
 %configure2_5x \
 	--disable-scrollkeeper \
 	--disable-shared
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} --with-gnome
 
