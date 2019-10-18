@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(poppler)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(taglib)
+BuildRequires:	pkgconfig(popt)
 BuildRequires:	chmlib-devel
 Requires:	gnome-vfs2
 
