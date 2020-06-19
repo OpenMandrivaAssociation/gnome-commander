@@ -44,7 +44,7 @@ support.
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/gnome-commander.desktop
 %{_mandir}/man1/*
-%{_datadir}/appdata/gnome-commander.appdata.xml
+3{_datadir}/appdata/gnome-commander.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
 %{_datadir}/gnome-commander/mime/*
 
