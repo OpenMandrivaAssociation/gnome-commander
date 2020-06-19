@@ -8,7 +8,7 @@ License:	GPLv2+
 Group:		File tools
 Url:		http://www.freesoftware.fsf.org/gcmd/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
-Patch0:		gnome-commander-1.2.8.17-sfmt.patch
+
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
 BuildRequires:	gnome-common
@@ -44,7 +44,7 @@ support.
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/gnome-commander.desktop
 %{_mandir}/man1/*
-%{_datadir}/metainfo/gnome-commander.appdata.xml
+#{_datadir}/metainfo/gnome-commander.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
 %{_datadir}/gnome-commander/mime/*
 
