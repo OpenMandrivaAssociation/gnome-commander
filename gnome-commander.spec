@@ -46,7 +46,7 @@ support.
 %{_mandir}/man1/*
 %{_datadir}/metainfo/gnome-commander.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
-%{_datadir}/gnome-commander/mime/*
+#{_datadir}/gnome-commander/mime/*
 
 #----------------------------------------------------------------------------
 
