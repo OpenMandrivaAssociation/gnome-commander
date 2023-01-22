@@ -17,6 +17,7 @@ BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxslt-proc
 BuildRequires:	meson
+BuildRequires:	gtk-update-icon-cache
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
