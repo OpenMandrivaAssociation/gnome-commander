@@ -58,7 +58,7 @@ support.
 %autopatch -p1
 
 %build
-%meson
+%meson -Dtests=disabled
 %meson_build
 
 %install
