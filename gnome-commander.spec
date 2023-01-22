@@ -14,7 +14,7 @@ BuildRequires:	flex
 BuildRequires:	gnome-common
 BuildRequires:	intltool
 BuildRequires:	libxslt-proc
-BuildRequires:	itstool
+BuildRequires:	meson
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
@@ -55,14 +55,11 @@ support.
 %autopatch -p1
 
 %build
-autoreconf
-%configure \
-	--disable-scrollkeeper \
-	--disable-shared
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name} --with-gnome
 
