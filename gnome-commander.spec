@@ -43,7 +43,7 @@ perform all standard file operations and some extra features like ftp
 support.
 
 %files -f %{name}.lang
-%doc README TODO COPYING ChangeLog
+%doc README* TODO COPYING
 %{_bindir}/gnome-commander
 %{_bindir}/gcmd-block
 %{_libdir}/gnome-commander/
