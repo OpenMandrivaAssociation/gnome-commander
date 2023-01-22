@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(poppler-glib)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(smbclient)
 BuildRequires:	pkgconfig(taglib)
+BuildRequires:	pkgconfig(unique-1.0)
 BuildRequires:	pkgconfig(popt)
 BuildRequires:	chmlib-devel
 Requires:	gnome-vfs2
