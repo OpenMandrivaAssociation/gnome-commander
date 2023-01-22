@@ -9,10 +9,12 @@ Group:		File tools
 Url:		http://www.freesoftware.fsf.org/gcmd/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
+BuildRequires:	appstream-util
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
 BuildRequires:	gnome-common
 BuildRequires:	intltool
+BuildRequires:	itstool
 BuildRequires:	libxslt-proc
 BuildRequires:	meson
 BuildRequires:	pkgconfig(exiv2)
