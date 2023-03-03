@@ -54,6 +54,10 @@ support.
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
 #{_datadir}/gnome-commander/mime/*
 
+%exclude %_includedir/%name/
+%exclude %_datadir/%name/internal_viewer_hacking.txt
+%exclude %_datadir/%name/keys.txt
+
 #----------------------------------------------------------------------------
 
 %prep
@@ -66,6 +70,8 @@ support.
 
 %install
 %meson_install
+
+rm -f %buildroot%_libdir/libgcmd.a
 
 %find_lang %{name} --with-gnome
 
