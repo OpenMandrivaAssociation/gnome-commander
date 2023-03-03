@@ -53,6 +53,8 @@ support.
 %{_datadir}/metainfo/org.gnome.gnome-commander.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
 #{_datadir}/gnome-commander/mime/*
+%{_iconsdir}/hicolor/scalable/apps/gnome-commander-symbolic.svg
+%{_iconsdir}/hicolor/scalable/apps/gnome-commander.svg
 
 %exclude %_includedir/%name/
 %exclude %_datadir/%name/internal_viewer_hacking.txt
