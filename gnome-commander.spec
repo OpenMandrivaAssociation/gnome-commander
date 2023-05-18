@@ -3,11 +3,12 @@
 Summary:	A Gnome filemanager similar to the Norton Commander(TM) 
 Name:		gnome-commander
 Version:	1.16.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		File tools
 Url:		http://www.freesoftware.fsf.org/gcmd/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Patch0:		gnome-commander-1.16.0-exiv2-0.28.patch
 
 BuildRequires:	appstream-util
 BuildRequires:	desktop-file-utils
@@ -63,8 +64,7 @@ support.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %meson -Dtests=disabled
