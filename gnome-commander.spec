@@ -8,7 +8,7 @@ License:	GPLv2+
 Group:		File tools
 Url:		http://www.freesoftware.fsf.org/gcmd/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
-Patch0:		gnome-commander-1.16.0-exiv2-0.28.patch
+#Patch0:		gnome-commander-1.16.0-exiv2-0.28.patch
 
 BuildRequires:	appstream-util
 BuildRequires:	desktop-file-utils
