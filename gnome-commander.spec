@@ -20,6 +20,7 @@ BuildRequires:	meson
 BuildRequires:	gtk-update-icon-cache
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(gconf-2.0)
+BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gnome-vfs-2.0)
 BuildRequires:	pkgconfig(lcms2)
