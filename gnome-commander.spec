@@ -58,7 +58,6 @@ support.
 %{_iconsdir}/hicolor/scalable/apps/gnome-commander-internal-viewer.svg
 %{_datadir}/gnome-commander/icons
 
-%exclude %_includedir/%name/
 %exclude %_datadir/%name/internal_viewer_hacking.txt
 %exclude %_datadir/%name/keys.txt
 
