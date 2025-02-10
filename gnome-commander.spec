@@ -2,8 +2,8 @@
 
 Summary:	A Gnome filemanager similar to the Norton Commander(TM) 
 Name:		gnome-commander
-Version:	1.18.1
-Release:	2
+Version:	1.18.2
+Release:	1
 License:	GPLv2+
 Group:		File tools
 Url:		https://www.freesoftware.fsf.org/gcmd/
