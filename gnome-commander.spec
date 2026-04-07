@@ -2,7 +2,7 @@
 
 Summary:	A Gnome filemanager similar to the Norton Commander(TM) 
 Name:		gnome-commander
-Version:	1.18.4
+Version:	1.18.5
 Release:	1
 License:	GPLv2+
 Group:		File tools
