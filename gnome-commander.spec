@@ -2,12 +2,13 @@
 
 Summary:	A Gnome filemanager similar to the Norton Commander(TM) 
 Name:		gnome-commander
-Version:	1.18.5
+Version:	2.0.3
 Release:	1
 License:	GPLv2+
 Group:		File tools
 Url:		https://www.freesoftware.fsf.org/gcmd/
 Source0:	https://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Source1:        vendor.tar.xz
 
 BuildRequires:	appstream-util
 BuildRequires:	desktop-file-utils
@@ -17,12 +18,17 @@ BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxslt-proc
 BuildRequires:	meson
+BuildRequires:	rust-packaging
 BuildRequires:	gtk-update-icon-cache
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(gconf-2.0)
-BuildRequires:	pkgconfig(gtk+-3.0)
-BuildRequires:	pkgconfig(gnome-doc-utils)
-BuildRequires:	pkgconfig(gnome-vfs-2.0)
+BuildRequires:  pkgconfig(gtk4)
+BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gi-docgen)
+BuildRequires:  pkgconfig(gmodule-2.0) >= 2.0.0
+BuildRequires:  pkgconfig(gobject-2.0)
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
+BuildRequires:	pkgconfig(harfbuzz-gobject)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(libgsf-1)
 BuildRequires:	pkgconfig(libxml-2.0)
@@ -33,8 +39,8 @@ BuildRequires:	pkgconfig(smbclient)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	pkgconfig(unique-1.0)
 BuildRequires:	pkgconfig(popt)
+BuildRequires:	pkgconfig(vte-2.91-gtk4)
 BuildRequires:	chmlib-devel
-Requires:	gnome-vfs2
 
 %description
 Gnome Commander is a filemanager that just like the classical Norton
@@ -43,31 +49,31 @@ perform all standard file operations and some extra features like ftp
 support.
 
 %files -f %{name}.lang
-%doc README* TODO COPYING
+%doc README* COPYING
+%doc %{_datadir}/doc/libgcmd-1.0/
 %{_bindir}/gnome-commander
-%{_bindir}/gcmd-block
 %{_libdir}/gnome-commander/
+%{_libdir}/libgcmd.so
+%{_libdir}/girepository-1.0/GnomeCmd-1.0.typelib
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/org.gnome.gnome-commander.desktop
 %{_mandir}/man1/*
-%{_datadir}/metainfo/org.gnome.gnome-commander.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-commander*
-#{_datadir}/gnome-commander/mime/*
+%{_datadir}/gir-1.0/GnomeCmd-1.0.gir
+%{_datadir}/metainfo/org.gnome.gnome-commander.metainfo.xml
+%{_datadir}/gnome-commander/icons
 %{_iconsdir}/hicolor/scalable/apps/gnome-commander-symbolic.svg
 %{_iconsdir}/hicolor/scalable/apps/gnome-commander.svg
 %{_iconsdir}/hicolor/scalable/apps/gnome-commander-internal-viewer.svg
-%{_datadir}/gnome-commander/icons
-
-%exclude %_datadir/%name/internal_viewer_hacking.txt
-%exclude %_datadir/%name/keys.txt
 
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1
+%autosetup -p1 -a1
+%cargo_prep -v vendor
 
 %build
-%meson -Dtests=disabled
+%meson
 %meson_build
 
 %install
